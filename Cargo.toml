@@ -1,0 +1,14 @@
+[package]
+name = "rsync_launcher"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1.32", features = ["full"] }
+# rsync = "0.1" # Hypothetical crate, replace or remove if unavailable
+# winget = "0.1" # Hypothetical crate, replace or remove if unavailable
+tauri = { version = "1.3", features = ["api-all"] }
+yew = { version = "0.20", features = ["csr"] }
+
+[build-dependencies]
+tauri-build = "1.3"
