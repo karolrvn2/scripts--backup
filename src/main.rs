@@ -5,15 +5,25 @@ use std::process::Stdio;
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Define the source and target directories
+    let src = "c:/users/hp/";
+    let dst = "c:/media/bkup/2025_hpoptop/users/hp/";
     let directories = vec![
-        ("c:\\users\\hp\\r/tools", 
+        // ("r/tools")
+        ("r"),
+        // ("Documents/big") // skip
+        ("Documents/now"),
+        ("Documents/setup"),
+        ("Documents/ShareX"),
+        
         // "remote:2025_hpoptop/users/hp/big"),
-        "/media/bkup/2025_hpoptop/users/hp/r/tools"),
-        ("c:\\users\\hp\\r/big", 
-          "/media/bkup/2025_hpoptop/users/hp/r/big"),
-        ("c:\\users\\hp\\r/rust", 
-          "/media/bkup/2025_hpoptop/users/hp/r/rust"),
+        // "/media/bkup/2025_hpoptop/users/hp/r/tools"),
+        // ("c:\\users\\hp\\r/big", 
+        //   "/media/bkup/2025_hpoptop/users/hp/r/big"),
+        // ("c:\\users\\hp\\r/rust", 
+        //   "/media/bkup/2025_hpoptop/users/hp/r/rust"),
 
+        //   ("c:\\users\\hp\\documents", 
+        //   "/media/bkup/2025_hpoptop/users/hp/documents"),
 
         // ("c:\\users\\hp\\documents\\big", 
         // // "remote:2025_hpoptop/users/hp/big"),
@@ -28,9 +38,9 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Use join handles to track tasks
     let mut tasks = Vec::new();
 
-    for (src, dest) in directories {
-        let src = src.to_string();
-        let dest = dest.to_string();
+    for (src_item) in directories {
+        let src = src.to_owned() + "/" + src_item;
+        let dest = dst.to_owned() + "/"  + src_item;
 
         // Spawn a task for each rclone sync process
         let task = task::spawn(async move {
