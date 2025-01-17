@@ -11,9 +11,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         // ("r/tools")
         ("r"),
         // ("Documents/big") // skip
-        ("Documents/now"),
-        ("Documents/setup"),
-        ("Documents/ShareX"),
+        ("Documents"), // moved to ~/big - whole point is to NOT have to have gazilion of manual exclusions / inclusions - fs first
+        // ("Documents/now"),
+        // ("Documents/setup"),
+        // ("Documents/ShareX"),
         
         // "remote:2025_hpoptop/users/hp/big"),
         // "/media/bkup/2025_hpoptop/users/hp/r/tools"),
