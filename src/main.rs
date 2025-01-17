@@ -10,6 +10,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let directories = vec![
         // ("r/tools")
         ("r"),
+        ("Pictures"),
         // ("Documents/big") // skip
         ("Documents"), // moved to ~/big - whole point is to NOT have to have gazilion of manual exclusions / inclusions - fs first
         // ("Documents/now"),
