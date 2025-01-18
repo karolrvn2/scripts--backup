@@ -2,7 +2,7 @@ use tokio::process::Command;
 use tokio::task;
 use std::process::Stdio;
 
-const RCLONE_EXE: &str = "C:\\Users\\HP\\my\\sync\\tools\\rclone-v1.69.0-windows-amd64\\rclone.exe";
+const RCLONE_EXE: &str = "C:\\Users\\HP\\my\\sync\\r\\tools\\rclone-v1.69.0-windows-amd64\\rclone.exe";
 
 
 #[tokio::main]
