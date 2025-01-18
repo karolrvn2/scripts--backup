@@ -2,11 +2,14 @@ use tokio::process::Command;
 use tokio::task;
 use std::process::Stdio;
 
+const RCLONE_EXE: &str = "C:\\Users\\HP\\my\\sync\\tools\\rclone-v1.69.0-windows-amd64\\rclone.exe";
+
+
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Define the source and target directories
-    let src = "c:/users/hp";
-    let dst = "c:/media/backup/backup/of/2025_hpoptop/users/hp";
+    let src = "c:/Users/HP";
+    let dst = "c:/media/backup/backup/of/2025_hpoptop/Users/HP";
     let directories = vec![
         // ("r/tools")
         // ("r"),
@@ -14,7 +17,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         // ("my/sync"),
         ("Videos"),
         ("Downloads"),
-        ("3D Object"),
+        ("3D Objects"),
         ("Pictures"),
         ("OneDrive"),
         // ("Documents/big") // skip
@@ -52,7 +55,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
         // Spawn a task for each rclone sync process
         let task = task::spawn(async move {
-            let status = Command::new("C:\\Users\\HP\\Documents\\big\\setup\\software\\rclone-v1.69.0-windows-amd64\\rclone.exe")
+            let status = Command::new(RCLONE_EXE)
                 .arg("sync") // Use rclone's sync command
                 .arg(&src)
                 .arg(&dest)
