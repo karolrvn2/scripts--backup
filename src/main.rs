@@ -5,12 +5,18 @@ use std::process::Stdio;
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Define the source and target directories
-    let src = "c:/users/hp/";
-    let dst = "c:/media/bkup/2025_hpoptop/users/hp/";
+    let src = "c:/users/hp";
+    let dst = "c:/media/backup/backup/of/2025_hpoptop/users/hp";
     let directories = vec![
         // ("r/tools")
-        ("r"),
+        // ("r"),
+        ("my/sync"),
+        // ("my/sync"),
+        ("Videos"),
+        ("Downloads"),
+        ("3D Object"),
         ("Pictures"),
+        ("OneDrive"),
         // ("Documents/big") // skip
         ("Documents"), // moved to ~/big - whole point is to NOT have to have gazilion of manual exclusions / inclusions - fs first
         // ("Documents/now"),
