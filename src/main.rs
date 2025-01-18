@@ -46,7 +46,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Use join handles to track tasks
     let mut tasks = Vec::new();
 
-    for (src_item) in directories {
+    for src_item in directories {
         let src = src.to_owned() + "/" + src_item;
         let dest = dst.to_owned() + "/"  + src_item;
 
