@@ -2,7 +2,7 @@ use tokio::process::Command;
 use tokio::task;
 use std::process::Stdio;
 
-const RCLONE_EXE: &str = "C:\\Users\\HP\\my\\sync\\r\\tools\\rclone-v1.69.0-windows-amd64\\rclone.exe";
+const RCLONE_EXE: &str = "C:\\Users\\HP\\my\\sync\\r\\tools\\software\\rclone-v1.69.0-windows-amd64\\rclone.exe";
 
 
 #[tokio::main]
@@ -13,8 +13,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let directories = vec![
         // ("r/tools")
         // ("r"),
+        ("my/r"),
         ("my/sync"),
-        // ("my/sync"),
         ("Videos"),
         ("Downloads"),
         ("3D Objects"),
@@ -39,11 +39,6 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
         // ("c:\\users\\hp\\documents\\big", 
         // // "remote:2025_hpoptop/users/hp/big"),
         // "/media/bkup/2025_hpoptop/users/hp/documents/big"),
-
-
-
-        // ("src_dir2", "remote:dest_dir2"),
-        // ("src_dir3", "remote:dest_dir3"),
     ];
 
     // Use join handles to track tasks
